@@ -1,0 +1,83 @@
+#!/usr/bin/env bash
+#
+# mds Agenturgruppe GmbH
+#
+# This source file is licensed under GNU General Public License version 3 (GPLv3).
+#
+# Full copyright and license information is available in
+# LICENSE.md which is distributed with this source code.
+#
+#  @copyright  Copyright (c) mds. Agenturgruppe GmbH (https://www.mds.eu)
+#
+PATH="/usr/local/bin/:$PATH"
+
+#Load variable defaults
+source ./vendor/mds-agenturgruppe/php-code-checker/default-checks.conf
+source ./vendor/mds-agenturgruppe/php-code-checker/default-args.conf
+
+#Load ruleset
+if [ -f ".mds-code-checker.conf" ]; then
+  # shellcheck disable=SC1091
+  source .mds-code-checker.conf
+fi
+if [ -z $RULESET ]; then
+    source ./vendor/mds-agenturgruppe/php-code-checker/rulesets/default-ruleset.conf
+fi
+# shellcheck disable=SC1091
+source "${RULESET}"
+echo "Using ruleset: ${RULESET}"
+
+#Reload project configuration to overwrite ruleset config
+if [ -f ".mds-code-checker.conf" ]; then
+  # shellcheck disable=SC1091
+  source .mds-code-checker.conf
+fi
+
+#Load check arguments
+if [ ! $# -eq 0 ]; then
+  source ./vendor/mds-agenturgruppe/php-code-checker/default-checks.conf
+  while [[ $# -gt 0 ]]; do
+    ARG=$(echo "$1"| tr [:lower:] [:upper:])
+    declare "$ARG"=1
+    shift
+  done
+fi
+
+#Execute source checks
+returnValue=0
+if [ "$PHPLOC" == 1 ]; then
+    printf '\033[1;34m+----------------------------------------+\n'
+    printf '|               PHPLOC                   |\n'
+    printf '+----------------------------------------+\033[0;39m\n'
+    php -d error_reporting=0 ./vendor/bin/phploc $PHPLOC_ARGS
+    returnValue=$(($returnValue + $?))
+fi
+if [ "$PHPCS" == 1 ]; then
+    printf '\033[1;34m+----------------------------------------+\n'
+    printf '|               PHPCS                    |\n'
+    printf '+----------------------------------------+\033[0;39m\n'
+    ./vendor/bin/phpcs $PHPCS_ARGS
+    returnValue=$(($returnValue + $?))
+fi
+if [ "$PHPMD" == 1 ]; then
+    printf '\033[1;34m+----------------------------------------+\n'
+    printf '|               PHPMD                    |\n'
+    printf '+----------------------------------------+\033[0;39m\n'
+    ./vendor/bin/phpmd $PHPMD_ARGS
+    returnValue=$(($returnValue + $?))
+fi
+if [ "$PHPCPD" == 1 ]; then
+    printf '\033[1;34m+----------------------------------------+\n'
+    printf '|               PHPCPD                   |\n'
+    printf '+----------------------------------------+\033[0;39m\n'
+    ./vendor/bin/phpcpd $PHPCPD_ARGS
+    returnValue=$(($returnValue + $?))
+fi
+if [ "$PHPDOCCHECK" == 1 ]; then
+    printf '\033[1;34m+----------------------------------------+\n'
+    printf '|               PHPDOCCHECK              |\n'
+    printf '+----------------------------------------+\033[0;39m\n'
+    ./vendor/bin/phpdoccheck $PHPDOCCHECK_ARGS
+    returnValue=$(($returnValue + $?))
+fi
+exit $returnValue
