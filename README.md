@@ -1,5 +1,5 @@
 # mds PHP Code Checker
-`mds-code-check` is a CLI tool for running PHP code checks with configurable rulesets with:
+`mds-code-check` is a CLI tool for running PHP 7.x code checks with configurable rule sets with:
 - [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer)
 - [phpmd](https://github.com/phpmd/phpmd)
 - [phpcpd](https://github.com/sebastianbergmann/phpcpd)
@@ -8,7 +8,7 @@
 
 ## Installation
 ```
-composer require mds-agenturgruppe/php-code-checker
+composer require --dev mds-agenturgruppe/php-code-checker:^1.0
 ```
 
 ## Getting Started
@@ -16,18 +16,18 @@ After successfully installation run this command:
 ```
 vendor/bin/mds-code-check
 ```
-This will execute code checks with the default ruleset.
+This will execute code checks with the default ruleset, which is intended for code checks of [Pimcore 6](https://github.com/pimcore) projects.
 
-## Configuring rulesets
-### Rulesets
-Rulesets define which checks and the arguments are used for a poject when running the `mds-code-check` script. By default [`rulesets/pimcore6/ruleset.conf`](rulesets/pimcore6/ruleset.conf) is used.
+## Configuring rule sets
+### Rule sets
+Rule sets define which checks and the arguments are used for a project when running the `mds-code-check` script. By default [`rulesets/pimcore6/ruleset.conf`](rulesets/pimcore6/ruleset.conf) is used.
 
 #### Configuration variables
 Ruleset files define variables to configure the executed checks.
 - Enable (`1`) or disable (`0`) checks:
     - `PHPCS`, `PHPMD`, `PHPCPD`, `PHPDOCCHECK`, `PHPLOC`
 - Arguments for each check:
-    - `PHPCS_ARGS`, `PHPMD_ARGS`, `PHPCPD_ARGS`, `PHPDOCCHECK_ARGS`, `PHPLOC_ARGS` 
+    - `PHPCS_ARGS`, `PHPMD_ARGS`, `PHPCPD_ARGS`, `PHPDOCCHECK_ARGS`, `PHPLOC_ARGS`
 
 ## Project configuration
 `mds-code-check` can be adapted to project specific needs.
@@ -55,11 +55,11 @@ In development or analysis process it is sometimes useful to only execute some t
 Only execute phploc:
 ```
 vendor/bin/mds-code-check phploc
-``` 
+```
 Only execute PHP_CodeSniffer and phpmd:
 ```
 vendor/bin/mds-code-check phpcs phpmd
-``` 
+```
 
 ## CI pipeline integration
 For usage in CI pipelines and failing code check stages `mds-code-check` returns exit code `1` if at least one of the executed check script returns exit code `1`. If all checks are successful exit code `0` is returned.
