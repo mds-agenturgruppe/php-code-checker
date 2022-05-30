@@ -1,10 +1,9 @@
 stages:
-- trigger
+  - trigger
 
-trigger mds/php-code-checker:
-    stage: trigger
-    tags:
-        - shell
-    script:
-        - 'curl -X POST -F "token=$BUILD_PIPELINE_TOKEN" -F "variables[BUILD_MDS_CODE_CHECKER]=true" -F "ref=master" https://gitlab.mds.eu/api/v4/projects/28/trigger/pipeline'
-
+trigger mds/php8-code-checker:
+  stage: trigger
+  tags:
+    - shell
+  script:
+    - 'curl -X POST -F "token=$BUILD_PIPELINE_TOKEN" -F "variables[BUILD_MDS_PHP8_CODE_CHECKER]=true" -F "ref=master" https://gitlab.mds.eu/api/v4/projects/28/trigger/pipeline'
