@@ -1,9 +1,10 @@
 # mds PHP Code Checker
 `mds-code-check` is a CLI tool for running PHP 8.x code checks with configurable rule sets with:
 - [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer)
-- [phpmd](https://github.com/phpmd/phpmd)
-- [phpcpd](https://github.com/sebastianbergmann/phpcpd)
-- [phploc](https://github.com/sebastianbergmann/phploc)
+- [PHPMD](https://github.com/phpmd/phpmd)
+- [PHP Copy/Paste Detector](https://github.com/sebastianbergmann/phpcpd)
+- [PHPLOC](https://github.com/sebastianbergmann/phploc)
+- [PHPDoc Checker](https://github.com/php-censor/phpdoc-checker)
 
 ## Installation
 ```
@@ -26,9 +27,9 @@ default [`rulesets/pimcoreX/ruleset.conf`](rulesets/pimcoreX/ruleset.conf) is us
 #### Configuration variables
 Ruleset files define variables to configure the executed checks.
 - Enable (`1`) or disable (`0`) checks:
-    - `PHPCS`, `PHPMD`, `PHPCPD`, `PHPLOC`
+    - `PHPCS`, `PHPMD`, `PHPCPD`, `PHPLOC`, `PHPDOCCHECK`
 - Arguments for each check:
-    - `PHPCS_ARGS`, `PHPMD_ARGS`, `PHPCPD_ARGS` `PHPLOC_ARGS`
+    - `PHPCS_ARGS`, `PHPMD_ARGS`, `PHPCPD_ARGS` `PHPLOC_ARGS`, `PHPDOCCHECK_ARGS`
 
 ## Project configuration
 `mds-code-check` can be adapted to project specific needs.

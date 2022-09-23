@@ -9,7 +9,8 @@
     "codeception/codeception": "^4.0",
     "phpmd/phpmd": "^2.10",
     "sebastian/phpcpd": "^6.0",
-    "phploc/phploc": "^7.0"
+    "phploc/phploc": "^7.0",
+    "php-censor/phpdoc-checker": "^3.1"
   },
   "bin":["bin/mds-code-check"]
 }
