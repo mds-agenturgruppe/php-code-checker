@@ -8,7 +8,7 @@
     "dancryer/php-docblock-checker": "^1.10.2",
     "cache/integration-tests": "^0.16.0",
     "codeception/codeception": "~2.4.5",
-    "phpmd/phpmd": "^2.6.0",
+    "phpmd/phpmd": "2.13.0",
     "sebastian/phpcpd": "^4.1.0",
     "phploc/phploc": "^5.0"
   },
