@@ -7,9 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### [2.1.1] - 2023-10-11
+## [3.0.0] - 2023-11-15
 
-#### Fix
+### Feature
+
+- Use `phpstan/phpstan`
+- Remove outdated packages:
+  - `sebastian/phpcpd`
+  - `php-censor/phpdoc-checker`,
+  - `phploc/phploc`
+
+## [2.1.1] - 2023-10-11
+
+### Fix
 
 - Lock `phpmd/phpmd` to v2.13.0
 
