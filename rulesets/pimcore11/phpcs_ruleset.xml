@@ -2,7 +2,6 @@
 <ruleset name="Pimcore_PhpCs">
     <description>mds Pimcore X PHPCS rulest</description>
     <rule ref="PSR2" />
-    <rule ref="Generic.Commenting.DocComment.MissingShort" />
     <rule ref="Squiz.Commenting.FileComment.Missing" />
     <rule ref="Squiz.Commenting.VariableComment.Missing" />
 </ruleset>

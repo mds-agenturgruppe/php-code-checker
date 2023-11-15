@@ -1,16 +1,13 @@
 {
   "name": "mds-agenturgruppe/php-code-checker",
-  "description": "CLI tool for running PHP 8.x code checks",
+  "description": "CLI tool for running PHP 8.x for Pimcore 11 code checks",
   "type": "library",
   "license": "GPL-3.0-or-later",
   "require": {
     "squizlabs/php_codesniffer": "^3.6",
-    "cache/integration-tests": "^0.17",
-    "codeception/codeception": "^4.0",
     "phpmd/phpmd": "2.13.0",
-    "sebastian/phpcpd": "^6.0",
-    "phploc/phploc": "^7.0",
-    "php-censor/phpdoc-checker": "^3.1"
+    "phpstan/phpstan": "^1.10",
+    "symplify/phpstan-rules": "^12.4"
   },
   "bin":["bin/mds-code-check"]
 }
