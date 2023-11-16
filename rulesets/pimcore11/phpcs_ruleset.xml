@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
-<ruleset name="Pimcore_PhpCs">
-    <description>mds Pimcore X PHPCS rulest</description>
+<ruleset name="mds_PhpCs">
+    <description>mds PHPCS rulest</description>
     <rule ref="PSR2" />
     <rule ref="Squiz.Commenting.FileComment.Missing" />
-    <rule ref="Squiz.Commenting.VariableComment.Missing" />
 </ruleset>

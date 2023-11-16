@@ -3,6 +3,8 @@
 `mds-code-check` is a CLI tool for running PHP 8.x code checks for Pimcore 11 and Symfony 6 with configurable rule sets with:
 
 - [PHPStan](https://phpstan.org/)
+  - [PHPStan Symfony Framework](https://github.com/phpstan/phpstan-symfony)
+  - [PHPStan Rules](https://github.com/symplify/phpstan-rules)
 - [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer)
 - [PHPMD](https://github.com/phpmd/phpmd)
 
@@ -58,7 +60,7 @@ Example for disabling checks and changing arguments:
 
 ```
 RULESET="./vendor/mds-agenturgruppe/php-code-checker/rulesets/pimcore11/ruleset.conf";
-PHPLOC=0
+PHPSTAN_ARGS="--level=9 analyse bundles"
 PHPCS_ARGS="--extensions=php --standard=./src/project-phpcs-ruleset.xml ./src -s"
 PHPMD_ARGS="./src text --standard=./src/project-phpmp-ruleset.xml --exclude=\"*/Resources/views/*\""
 ```
