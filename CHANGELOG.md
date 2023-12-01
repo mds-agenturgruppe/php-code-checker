@@ -7,15 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.1.0] - 2023-12-01
+
+### Feature
+
+- PHP_CodeSniffer checks based on PSR12
+
 ## [3.0.0] - 2023-11-15
 
 ### Feature
 
 - Use `phpstan/phpstan`
 - Remove outdated packages:
-  - `sebastian/phpcpd`
-  - `php-censor/phpdoc-checker`,
-  - `phploc/phploc`
+    - `sebastian/phpcpd`
+    - `php-censor/phpdoc-checker`,
+    - `phploc/phploc`
 
 ## [2.1.1] - 2023-10-11
 
