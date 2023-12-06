@@ -73,11 +73,11 @@ if [ "$PHPCPD" == 1 ]; then
     ./vendor/bin/phpcpd $PHPCPD_ARGS
     returnValue=$(($returnValue + $?))
 fi
-if [ "$PHPDOCCHECK" == 1 ]; then
+if [ "$PHPSTAN" == 1 ]; then
     printf '\033[1;34m+----------------------------------------+\n'
-    printf '|               PHPDOCCHECK              |\n'
+    printf '|               PHPStan                  |\n'
     printf '+----------------------------------------+\033[0;39m\n'
-    ./vendor/bin/phpdoc-checker $PHPDOCCHECK_ARGS
+    ./vendor/bin/phpstan $PHPSTAN_ARGS
     returnValue=$(($returnValue + $?))
 fi
 

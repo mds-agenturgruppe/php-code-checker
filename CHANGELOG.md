@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### [2.2.0] - 2023-12-06
+
+### Feature
+
+- Use `phpstan/phpstan`
+
+### Breaking change
+
+- PHP_CodeSniffer checks based on PSR12 for Pimcore 10 default rules
+  - Use `./vendor/mds-agenturgruppe/php-code-checker/rulesets/pimcore6/phpcs_ruleset.xml` for PSR2 bases rules
+- Remove outdated package
+  - `php-censor/phpdoc-checker`
+
 ### [2.1.1] - 2023-10-11
 
 #### Fix
