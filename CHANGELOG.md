@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Feature
+
+- Exclude pattern `*/node_modules*/` PHP_CodeSniffer and PHPMD rule sets
+
 ## [3.1.0] - 2023-12-01
 
 ### Feature
@@ -19,9 +23,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Use `phpstan/phpstan`
 - Remove outdated packages:
-    - `sebastian/phpcpd`
-    - `php-censor/phpdoc-checker`,
-    - `phploc/phploc`
+  - `sebastian/phpcpd`
+  - `php-censor/phpdoc-checker`,
+  - `phploc/phploc`
 
 ## [2.1.1] - 2023-10-11
 

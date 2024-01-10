@@ -11,4 +11,5 @@
     <rule ref="Squiz.Commenting.ClassComment.Missing"/>
     <rule ref="Squiz.Commenting.VariableComment.Missing"/>
     <rule ref="Squiz.Commenting.FunctionComment.Missing"/>
+    <exclude-pattern>*/node_modules/*</exclude-pattern>
 </ruleset>
