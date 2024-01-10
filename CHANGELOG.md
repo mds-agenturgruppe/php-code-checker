@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### [2.3.0] - 2024-01-10
+
+### Feature
+
+- Exclude pattern `*/node_modules*/` PHP_CodeSniffer and PHPMD rule sets
+
 ### [2.2.0] - 2023-12-06
 
 ### Feature

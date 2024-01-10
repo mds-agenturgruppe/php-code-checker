@@ -56,4 +56,5 @@
             <property name="maximum" value="30"/>
         </properties>
     </rule>
+    <exclude-pattern>*/node_modules/*</exclude-pattern>
 </ruleset>
