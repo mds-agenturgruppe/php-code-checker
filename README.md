@@ -1,6 +1,6 @@
 # mds PHP Code Checker
 
-`mds-code-check` is a CLI tool for running PHP 8.x code checks for Pimcore 11 and Symfony 6 with configurable rule sets with:
+`mds-code-check` is a CLI tool for running PHP 8.x code checks for Symfony based applications with configurable rule sets with:
 
 - [PHPStan](https://phpstan.org/)
   - [PHPStan Symfony Framework](https://github.com/phpstan/phpstan-symfony)
@@ -11,7 +11,7 @@
 ## Installation
 
 ```
-composer require --dev mds-agenturgruppe/php-code-checker:^3.0
+composer require --dev mds-agenturgruppe/php-code-checker:^4.0
 ```
 
 ## Getting Started
@@ -29,7 +29,7 @@ This will execute code checks with the default ruleset, which is intended for co
 ### Rule sets
 
 Rule sets define which checks and the arguments are used for a project when running the `mds-code-check` script. By
-default [`rulesets/pimcore11/ruleset.conf`](rulesets/pimcore11/ruleset.conf) is used.
+default [`rulesets/pimcore11/ruleset.conf`](rulesets/default/ruleset.conf) is used.
 
 #### Configuration variables
 
