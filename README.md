@@ -16,20 +16,20 @@ composer require --dev mds-agenturgruppe/php-code-checker:^4.0
 
 ## Getting Started
 
-After successfully installation run this command:
+After successful installation run this command:
 
 ```
 vendor/bin/mds-code-check
 ```
 
-This will execute code checks with the default ruleset, which is intended for code checks of [Pimcore 11](https://github.com/pimcore) projects.
+This will execute code checks with the default ruleset, which is intended for code checks of Symfony projects.
 
 ## Configuring rule sets
 
 ### Rule sets
 
 Rule sets define which checks and the arguments are used for a project when running the `mds-code-check` script. By
-default [`rulesets/pimcore11/ruleset.conf`](rulesets/default/ruleset.conf) is used.
+default [`rulesets/default/ruleset.conf`](rulesets/default/ruleset.conf) is used.
 
 #### Configuration variables
 
@@ -49,7 +49,7 @@ Ruleset files define variables to configure the executed checks.
 The used ruleset is configured by placing `.mds-code-checker.conf` into the project root folder defining the `RULESET` variable with the ruleset file to use.
 
 ```
-RULESET="./vendor/mds-agenturgruppe/php-code-checker/rulesets/pimcore11/ruleset.conf";
+RULESET="./vendor/mds-agenturgruppe/php-code-checker/rulesets/default/ruleset.conf";
 ```
 
 ### Adapting ruleset
@@ -59,7 +59,7 @@ In the project configuration file `.mds-code-checker.conf` the used ruleset can 
 Example for disabling checks and changing arguments:
 
 ```
-RULESET="./vendor/mds-agenturgruppe/php-code-checker/rulesets/pimcore11/ruleset.conf";
+RULESET="./vendor/mds-agenturgruppe/php-code-checker/rulesets/default/ruleset.conf";
 PHPSTAN_ARGS="--level=9 analyse bundles"
 PHPCS_ARGS="--extensions=php --standard=./src/project-phpcs-ruleset.xml ./src -s"
 PHPMD_ARGS="./src text --standard=./src/project-phpmp-ruleset.xml --exclude=\"*/Resources/views/*\""
@@ -67,7 +67,7 @@ PHPMD_ARGS="./src text --standard=./src/project-phpmp-ruleset.xml --exclude=\"*/
 
 ## `mds-code-check` arguments
 
-In development or analysis process it is sometimes useful to only execute some tests. This can be achieved by passing check names as arguments to `mds-code-check`.
+In the development or analysis process, it is sometimes useful to only execute some tests. This can be achieved by passing check names as arguments to `mds-code-check`.
 
 Only execute phpstan:
 
