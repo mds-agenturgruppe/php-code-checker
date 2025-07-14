@@ -5,18 +5,20 @@
 - [PHPStan](https://phpstan.org/)
   - [PHPStan Symfony Framework](https://github.com/phpstan/phpstan-symfony)
   - [PHPStan Rules](https://github.com/symplify/phpstan-rules)
+  - [Rules for detecting deprecations](https://github.com/phpstan/phpstan-deprecation-rules)
 - [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer)
 - [PHPMD](https://github.com/phpmd/phpmd)
+- [Rector](https://getrector.com/)
 
 ## Installation
 
 ```
-composer require --dev mds-agenturgruppe/php-code-checker:^4.0
+composer require --dev mds-agenturgruppe/php-code-checker:^5.0
 ```
 
 ## Getting Started
 
-After successful installation run this command:
+After installation run this command:
 
 ```
 vendor/bin/mds-code-check
@@ -42,7 +44,7 @@ Ruleset files define variables to configure the executed checks.
 
 ## Project configuration
 
-`mds-code-check` can be adapted to project specific needs.
+`mds-code-check` can be adapted to project-specific needs.
 
 ### Used ruleset
 
@@ -86,7 +88,15 @@ vendor/bin/mds-code-check phpcs phpmd
 For usage in CI pipelines and failing code check stages `mds-code-check` returns exit code `1` if at least one of the executed check script returns exit code `1`. If all checks are
 successful exit code `0` is returned.
 
----
+# PHPStan
+
+## Find use of deprecations
+
+To find usage of deprecated sources add to the project `phpstan.neon` file:
+
+```
+vendor/phpstan/phpstan-deprecation-rules/rules.neon
+```
 
 # Rector
 
@@ -95,21 +105,35 @@ To run rector with our default config execute
 ```
 vendor/bin/mds-rector
 ```
+
 This will use config `rulesets/default/rector-default.php` and the `dry-run` option.
 
-_Tip:_ For a better overview of the dry-run output forward this to a e.g. `> rector-run.diff` file and open that in sublime.
+_Tip:_ For a better overview of the dry-run output forward this to e.g. `> rector-run.diff` file and open that in sublime.
+
+```
+vendor/bin/mds-rector --dry-run > rector-run.diff
+```
 
 Use the option `--force-run` to apply all the changes.
+
 ```
 vendor/bin/mds-rector --force-run
 ```
 
 ## Custom Config
+
 To use a custom config for your project, you can copy `rulesets/default/rector-default.php` to `PROJECT_DIR/rector.php` and adjust that to your needs.
 
 Then use the standard rector cli command.
+
 ```
 vendor/bin/rector process --dry-run
 ```
 
 For more information check: https://getrector.com/documentation
+
+# Migration to v5.x
+
+## PHPStan
+
+- If you use PhpStorm and want a one-time change, use the Replace function with regex activated so that you replace `@SuppressWarnings\(([^"\)]+)\)` with `@SuppressWarnings("$1")`.
