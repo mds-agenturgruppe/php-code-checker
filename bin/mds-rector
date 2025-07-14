@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+#
+# mds. Agenturgruppe GmbH
+#
+# This source file is available under the terms of the 3-Clause BSD License
+# Full copyright and license information is available in
+# LICENSE.md which is distributed with this source code.
+#
+# @copyright Copyright (c) mds. Agenturgruppe GmbH (https://www.mds.eu)
+# @license   3-Clause BSD License (BSD-3-Clause)
+#
+
+DEFAULT_CONFIG="--config ./vendor/mds-agenturgruppe/php-code-checker/rulesets/default/rector-default.php"
+
+DRY_RUN="--dry-run"
+for arg in "$@"; do
+  # Option "--force-run"
+  if [ "$arg" == "--force-run" ]; then
+    DRY_RUN=''
+    break
+  fi
+done
+
+./vendor/bin/rector process $DEFAULT_CONFIG $DRY_RUN "$@"

@@ -85,3 +85,31 @@ vendor/bin/mds-code-check phpcs phpmd
 
 For usage in CI pipelines and failing code check stages `mds-code-check` returns exit code `1` if at least one of the executed check script returns exit code `1`. If all checks are
 successful exit code `0` is returned.
+
+---
+
+# Rector
+
+To run rector with our default config execute
+
+```
+vendor/bin/mds-rector
+```
+This will use config `rulesets/default/rector-default.php` and the `dry-run` option.
+
+_Tip:_ For a better overview of the dry-run output forward this to a e.g. `> rector-run.diff` file and open that in sublime.
+
+Use the option `--force-run` to apply all the changes.
+```
+vendor/bin/mds-rector --force-run
+```
+
+## Custom Config
+To use a custom config for your project, you can copy `rulesets/default/rector-default.php` to `PROJECT_DIR/rector.php` and adjust that to your needs.
+
+Then use the standard rector cli command.
+```
+vendor/bin/rector process --dry-run
+```
+
+For more information check: https://getrector.com/documentation
