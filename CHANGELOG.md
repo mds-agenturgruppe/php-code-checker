@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - `phpstan/phpstan`
   - `symplify/phpstan-rules`
   - `phpstan/phpstan-symfony`
+- Add `phpstan/phpstan-deprecation-rules`
 
 ## [4.0.0] - 2025-06-24
 
