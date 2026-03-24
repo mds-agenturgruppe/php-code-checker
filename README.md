@@ -6,7 +6,7 @@
   - [PHPStan Symfony Framework](https://github.com/phpstan/phpstan-symfony)
   - [PHPStan Rules](https://github.com/symplify/phpstan-rules)
   - [Rules for detecting deprecations](https://github.com/phpstan/phpstan-deprecation-rules)
-- [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer)
+- [PHP_CodeSniffer](https://github.com/PHPCSStandards/PHP_CodeSniffer)
 - [PHPMD](https://github.com/phpmd/phpmd)
 - [Rector](https://getrector.com/)
 
